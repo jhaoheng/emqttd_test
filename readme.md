@@ -67,3 +67,17 @@ array (
   'topic' => 'test',
 )
 ```
+
+### 關於 auth plugin response
+根據官方文件 [emqttd_auth_http](https://github.com/emqtt/emqttd_auth_http)
+必須要用 http status code 回傳給 emqttd auth 
+
+- php 用法 
+
+```
+http_response_code(200);//200:success ; 401:failure
+echo http_response_code();
+```
+
+- 一旦 failure 則 device 斷線，無法連接
+
