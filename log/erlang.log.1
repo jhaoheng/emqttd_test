@@ -1305,3 +1305,181 @@ Erlang MQTT Broker 1.1 is running now
 Eshell V7.3  (abort with ^G)
 (emqttd@127.0.0.1)1> 
 ===== ALIVE Thu Jun 16 08:47:48 UTC 2016
+
+=====
+===== LOGGING STARTED Thu Jun 23 10:47:08 UTC 2016
+=====
+Exec: /root/emqttd_test/erts-7.3/bin/erlexec -boot /root/emqttd_test/releases/1.1.1/emqttd             -embedded -config /root/emqttd_test/etc/emqttd.config             -pa ./lib/basho-patches             -mnesia dir "/root/emqttd_test/data/mnesia/emqttd@127.0.0.1"             -args_file /root/emqttd_test/etc/vm.args -- console
+Root: /root/emqttd_test
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:1:1] [async-threads:48] [hipe] [kernel-poll:true]
+
+starting emqttd on node 'emqttd@127.0.0.1'
+emqttd ctl is starting...[done]
+emqttd hook is starting...[done]
+emqttd pubsub is starting...[done]
+emqttd stats is starting...[done]
+emqttd metrics is starting...[done]
+emqttd retainer is starting...[done]
+emqttd pooler is starting...[done]
+emqttd trace is starting...[done]
+emqttd client manager is starting...[done]
+emqttd session manager is starting...[done]
+emqttd session supervisor is starting...[done]
+emqttd broker is starting...[done]
+emqttd alarm is starting...[done]
+emqttd mod supervisor is starting...[done]
+emqttd bridge supervisor is starting...[done]
+emqttd access control is starting...[done]
+emqttd system monitor is starting...[done]
+
+=INFO REPORT==== 23-Jun-2016::10:47:10 ===
+    application: emqttd
+    exited: {bad_return,
+                {{emqttd_app,start,[normal,[]]},
+                 {'EXIT',
+                     {{badmatch,
+                          {error,
+                              {43,erl_parse,["syntax error before: ","']'"]}}},
+                      [{emqttd_plugins,plugin,2,
+                           [{file,"src/emqttd_plugins.erl"},{line,95}]},
+                       {emqttd_plugins,'-list/0-lc$^0/1-0-',2,
+                           [{file,"src/emqttd_plugins.erl"},{line,76}]},
+                       {emqttd_plugins,list,0,
+                           [{file,"src/emqttd_plugins.erl"},{line,76}]},
+                       {emqttd_plugins,load_plugins,2,
+                           [{file,"src/emqttd_plugins.erl"},{line,48}]},
+                       {emqttd_app,start,2,
+                           [{file,"src/emqttd_app.erl"},{line,54}]},
+                       {application_master,start_it_old,4,
+                           [{file,"application_master.erl"},{line,273}]}]}}}}
+    type: permanent
+[os_mon] memory supervisor port (memsup): Erlang has closed
+[os_mon] cpu supervisor port (cpu_sup): Erlang has closed
+Eshell V7.3  (abort with ^G)
+(emqttd@127.0.0.1)1> {"Kernel pid terminated",application_controller,"{application_start_failure,emqttd,{bad_return,{{emqttd_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{43,erl_parse,[\"syntax error before: \",\"']'\"]}}},[{emqttd_plugins,plugin,2,[{file,\"src/emqttd_plugins.erl\"},{line,95}]},{emqttd_plugins,'-list/0-lc$^0/1-0-',2,[{file,\"src/emqttd_plugins.erl\"},{line,76}]},{emqttd_plugins,list,0,[{file,\"src/emqttd_plugins.erl\"},{line,76}]},{emqttd_plugins,load_plugins,2,[{file,\"src/emqttd_plugins.erl\"},{line,48}]},{emqttd_app,start,2,[{file,\"src/emqttd_app.erl\"},{line,54}]},{application_master,start_it_old,4,[{file,\"application_master.erl\"},{line,273}]}]}}}}}"}
+
+Crash dump is being written to: erl_crash.dump...done
+Kernel pid terminated (application_controller) ({application_start_failure,emqttd,{bad_return,{{emqttd_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{43,erl_parse,["syntax error before: ","']'"]}
+
+=====
+===== LOGGING STARTED Thu Jun 23 10:52:12 UTC 2016
+=====
+Exec: /root/emqttd_test/erts-7.3/bin/erlexec -boot /root/emqttd_test/releases/1.1.1/emqttd             -embedded -config /root/emqttd_test/etc/emqttd.config             -pa ./lib/basho-patches             -mnesia dir "/root/emqttd_test/data/mnesia/emqttd@127.0.0.1"             -args_file /root/emqttd_test/etc/vm.args -- console
+Root: /root/emqttd_test
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:1:1] [async-threads:48] [hipe] [kernel-poll:true]
+
+starting emqttd on node 'emqttd@127.0.0.1'
+emqttd ctl is starting...[done]
+emqttd hook is starting...[done]
+emqttd pubsub is starting...[done]
+emqttd stats is starting...[done]
+emqttd metrics is starting...[done]
+emqttd retainer is starting...[done]
+emqttd pooler is starting...[done]
+emqttd trace is starting...[done]
+emqttd client manager is starting...[done]
+emqttd session manager is starting...[done]
+emqttd session supervisor is starting...[done]
+emqttd broker is starting...[done]
+emqttd alarm is starting...[done]
+emqttd mod supervisor is starting...[done]
+emqttd bridge supervisor is starting...[done]
+emqttd access control is starting...[done]
+emqttd system monitor is starting...[done]
+http listen on 0.0.0.0:18083 with 4 acceptors.
+mqtt listen on 0.0.0.0:1883 with 16 acceptors.
+mqtts listen on 0.0.0.0:8883 with 4 acceptors.
+http listen on 0.0.0.0:8083 with 4 acceptors.
+Erlang MQTT Broker 1.1 is running now
+Eshell V7.3  (abort with ^G)
+(emqttd@127.0.0.1)1> 
+=INFO REPORT==== 23-Jun-2016::10:53:12 ===
+    alarm_handler: {set,{system_memory_high_watermark,[]}}
+stopped mqtt on 0.0.0.0:1883
+stopped mqtts on 0.0.0.0:8883
+stopped http on 0.0.0.0:8083
+
+=ERROR REPORT==== 23-Jun-2016::10:54:22 ===
+    application_master: shutdown_error
+    emqttd_auth_http_app: {prep_stop,[[]]}
+    error_info: {noproc,{gen_server,call,
+                                    [emqttd_access_control,
+                                     {unregister_mod,acl,emqttd_acl_http}]}}
+stopped http on 0.0.0.0:18083
+[os_mon] memory supervisor port (memsup): Erlang has closed
+[os_mon] cpu supervisor port (cpu_sup): Erlang has closed
+
+=INFO REPORT==== 23-Jun-2016::10:54:22 ===
+    alarm_handler: {clear,system_memory_high_watermark}
+
+=====
+===== LOGGING STARTED Thu Jun 23 10:54:26 UTC 2016
+=====
+Exec: /root/emqttd_test/erts-7.3/bin/erlexec -boot /root/emqttd_test/releases/1.1.1/emqttd             -embedded -config /root/emqttd_test/etc/emqttd.config             -pa ./lib/basho-patches             -mnesia dir "/root/emqttd_test/data/mnesia/emqttd@127.0.0.1"             -args_file /root/emqttd_test/etc/vm.args -- console
+Root: /root/emqttd_test
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:1:1] [async-threads:48] [hipe] [kernel-poll:true]
+
+starting emqttd on node 'emqttd@127.0.0.1'
+emqttd ctl is starting...[done]
+emqttd hook is starting...[done]
+emqttd pubsub is starting...[done]
+emqttd stats is starting...[done]
+emqttd metrics is starting...[done]
+emqttd retainer is starting...[done]
+emqttd pooler is starting...[done]
+emqttd trace is starting...[done]
+emqttd client manager is starting...[done]
+emqttd session manager is starting...[done]
+emqttd session supervisor is starting...[done]
+emqttd broker is starting...[done]
+emqttd alarm is starting...[done]
+emqttd mod supervisor is starting...[done]
+emqttd bridge supervisor is starting...[done]
+emqttd access control is starting...[done]
+emqttd system monitor is starting...[done]
+http listen on 0.0.0.0:18083 with 4 acceptors.
+
+=INFO REPORT==== 23-Jun-2016::10:54:27 ===
+    application: emqttd_auth_http
+    exited: {bad_return,
+             {{emqttd_auth_http_app,start,[normal,[]]},
+              {'EXIT',
+               {{badmatch,
+                 {error,
+                  {undef,
+                   [{emqttd_acl_http,init,
+                     [{undefined,
+                       {http_request,post,
+                        "http://huder.link/max/phpTraining/post_receive.php",
+                        [{access,"%A"},
+                         {username,"%u"},
+                         {password,"%P"},
+                         {clientid,"%c"},
+                         {ipaddr,"%a"},
+                         {topic,"%t"},
+                         {email,"%u"}]}}],
+                     []},
+                    {emqttd_access_control,'-handle_call/3-fun-1-',5,
+                     [{file,"src/emqttd_access_control.erl"},{line,147}]},
+                    {emqttd_access_control,handle_call,3,
+                     [{file,"src/emqttd_access_control.erl"},{line,146}]},
+                    {gen_server,try_handle_call,4,
+                     [{file,"gen_server.erl"},{line,629}]},
+                    {gen_server,handle_msg,5,
+                     [{file,"gen_server.erl"},{line,661}]},
+                    {proc_lib,init_p_do_apply,3,
+                     [{file,"proc_lib.erl"},{line,240}]}]}}},
+                [{emqttd_auth_http_app,start,2,
+                  [{file,"src/emqttd_auth_http_app.erl"},{line,39}]},
+                 {application_master,start_it_old,4,
+                  [{file,"application_master.erl"},{line,273}]}]}}}}
+    type: temporary
+mqtt listen on 0.0.0.0:1883 with 16 acceptors.
+mqtts listen on 0.0.0.0:8883 with 4 acceptors.
+http listen on 0.0.0.0:8083 with 4 acceptors.
+Erlang MQTT Broker 1.1 is running now
+10:54:27.682 [1;31m[error] load plugin emqttd_auth_http error, cannot start app emqttd_auth_http for {bad_return,{{emqttd_auth_http_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{undef,[{emqttd_acl_http,init,[{undefined,{http_request,post,"http://huder.link/max/phpTraining/post_receive.php",[{access,"%A"},{username,"%u"},{password,"%P"},{clientid,"%c"},{ipaddr,"%a"},{topic,"%t"},{email,"%u"}]}}],[]},{emqttd_access_control,'-handle_call/3-fun-1-',5,[{file,"src/emqttd_access_control.erl"},{line,147}]},{emqttd_access_control,handle_call,3,[{file,"src/emqttd_access_control.erl"},{line,146}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,629}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,661}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}}},[{emqttd_auth_http_app,start,2,[{file,"src/emqttd_auth_http_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,273}]}]}}}}[0m
+Eshell V7.3  (abort with ^G)
+(emqttd@127.0.0.1)1> 
+=INFO REPORT==== 23-Jun-2016::10:55:26 ===
+    alarm_handler: {set,{system_memory_high_watermark,[]}}
