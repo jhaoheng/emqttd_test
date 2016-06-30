@@ -1,5 +1,5 @@
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,sasl_safe_sup}
              started: [{pid,<0.45.0>},
                        {id,alarm_handler},
@@ -8,7 +8,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,sasl_safe_sup}
              started: [{pid,<0.46.0>},
                        {id,overload},
@@ -17,7 +17,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,sasl_sup}
              started: [{pid,<0.44.0>},
                        {id,sasl_safe_sup},
@@ -28,7 +28,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,sasl_sup}
              started: [{pid,<0.47.0>},
                        {id,release_handler},
@@ -37,27 +37,27 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: sasl
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: asn1
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: syntax_tools
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: crypto
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: public_key
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,ssl_sup}
              started: [{pid,<0.57.0>},
                        {id,ssl_manager},
@@ -66,7 +66,7 @@
                        {shutdown,4000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,ssl_sup}
              started: [{pid,<0.58.0>},
                        {id,tls_connection},
@@ -75,7 +75,7 @@
                        {shutdown,4000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,ssl_sup}
              started: [{pid,<0.59.0>},
                        {id,ssl_socket},
@@ -84,19 +84,19 @@
                        {shutdown,4000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: ssl
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: eldap
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: xmerl
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,os_mon_sup}
              started: [{pid,<0.66.0>},
                        {id,disksup},
@@ -105,7 +105,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,os_mon_sup}
              started: [{pid,<0.67.0>},
                        {id,memsup},
@@ -114,7 +114,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,os_mon_sup}
              started: [{pid,<0.69.0>},
                        {id,cpu_sup},
@@ -123,11 +123,11 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: os_mon
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,inets_sup}
              started: [{pid,<0.76.0>},
                        {id,ftp_sup},
@@ -136,7 +136,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,httpc_profile_sup}
              started: [{pid,<0.79.0>},
                        {id,httpc_manager},
@@ -147,7 +147,7 @@
                        {shutdown,4000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,httpc_sup}
              started: [{pid,<0.78.0>},
                        {id,httpc_profile_sup},
@@ -158,7 +158,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,httpc_sup}
              started: [{pid,<0.80.0>},
                        {id,httpc_handler_sup},
@@ -167,7 +167,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,inets_sup}
              started: [{pid,<0.77.0>},
                        {id,httpc_sup},
@@ -178,7 +178,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,inets_sup}
              started: [{pid,<0.81.0>},
                        {id,httpd_sup},
@@ -187,7 +187,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,inets_sup}
              started: [{pid,<0.82.0>},
                        {id,tftp_sup},
@@ -196,15 +196,15 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: inets
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: compiler
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_sup}
              started: [{pid,<0.88.0>},
                        {id,gr_counter_sup},
@@ -213,7 +213,7 @@
                        {shutdown,5000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_sup}
              started: [{pid,<0.89.0>},
                        {id,gr_param_sup},
@@ -222,7 +222,7 @@
                        {shutdown,5000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_sup}
              started: [{pid,<0.90.0>},
                        {id,gr_manager_sup},
@@ -231,11 +231,11 @@
                        {shutdown,5000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: goldrush
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,runtime_tools_sup}
              started: [{pid,<0.95.0>},
                        {id,ttb_autostart},
@@ -244,11 +244,11 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: runtime_tools
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,lager_sup}
              started: [{pid,<0.100.0>},
                        {id,lager},
@@ -257,7 +257,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,lager_sup}
              started: [{pid,<0.101.0>},
                        {id,lager_handler_watcher_sup},
@@ -266,7 +266,7 @@
                        {shutdown,5000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,lager_sup}
              started: [{pid,<0.102.0>},
                        {id,lager_crash_log},
@@ -279,7 +279,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_param_sup}
              started: [{pid,<0.109.0>},
                        {id,gr_lager_default_tracer_params},
@@ -290,7 +290,7 @@
                        {shutdown,brutal_kill},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_counter_sup}
              started: [{pid,<0.110.0>},
                        {id,gr_lager_default_tracer_counters},
@@ -301,7 +301,7 @@
                        {shutdown,brutal_kill},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_manager_sup}
              started: [{pid,<0.111.0>},
                        {id,gr_lager_default_tracer_params_mgr},
@@ -313,7 +313,7 @@
                        {shutdown,brutal_kill},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:26 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gr_manager_sup}
              started: [{pid,<0.112.0>},
                        {id,gr_lager_default_tracer_counters_mgr},
@@ -326,15 +326,15 @@
                        {shutdown,brutal_kill},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: lager
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: gen_logger
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gproc_sup}
              started: [{pid,<0.119.0>},
                        {id,gproc},
@@ -343,7 +343,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gproc_sup}
              started: [{pid,<0.120.0>},
                        {id,gproc_monitor},
@@ -352,7 +352,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gproc_sup}
              started: [{pid,<0.121.0>},
                        {id,gproc_bcast},
@@ -361,7 +361,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,gproc_sup}
              started: [{pid,<0.122.0>},
                        {id,gproc_pool},
@@ -370,11 +370,11 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: gproc
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,esockd_sup}
              started: [{pid,<0.127.0>},
                        {id,esockd_server},
@@ -383,15 +383,15 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: esockd
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: mochiweb
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,kernel_safe_sup}
              started: [{pid,<0.132.0>},
                        {id,dets_sup},
@@ -400,7 +400,7 @@
                        {shutdown,1000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,kernel_safe_sup}
              started: [{pid,<0.133.0>},
                        {id,dets},
@@ -409,7 +409,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_sup}
              started: [{pid,<0.141.0>},
                        {id,mnesia_event},
@@ -418,7 +418,7 @@
                        {shutdown,30000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.143.0>},
                        {id,mnesia_monitor},
@@ -427,7 +427,7 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.144.0>},
                        {id,mnesia_subscr},
@@ -436,7 +436,7 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.145.0>},
                        {id,mnesia_locker},
@@ -445,7 +445,7 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.146.0>},
                        {id,mnesia_recover},
@@ -454,7 +454,7 @@
                        {shutdown,180000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,kernel_safe_sup}
              started: [{pid,<0.151.0>},
                        {id,disk_log_sup},
@@ -463,7 +463,7 @@
                        {shutdown,1000},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,kernel_safe_sup}
              started: [{pid,<0.152.0>},
                        {id,disk_log_server},
@@ -472,7 +472,7 @@
                        {shutdown,2000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.147.0>},
                        {id,mnesia_tm},
@@ -481,7 +481,7 @@
                        {shutdown,30000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.165.0>},
                        {id,mnesia_checkpoint_sup},
@@ -490,7 +490,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.166.0>},
                        {id,mnesia_snmp_sup},
@@ -499,7 +499,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.167.0>},
                        {id,mnesia_controller},
@@ -508,7 +508,7 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_kernel_sup}
              started: [{pid,<0.168.0>},
                        {id,mnesia_late_loader},
@@ -517,7 +517,7 @@
                        {shutdown,3000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,mnesia_sup}
              started: [{pid,<0.142.0>},
                        {id,mnesia_kernel_sup},
@@ -526,11 +526,11 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: mnesia
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.199.0>},
                        {id,emqttd_ctl},
@@ -539,7 +539,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.200.0>},
                        {id,emqttd_hook},
@@ -548,7 +548,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_pubsub_sup}
              started: [{pid,<0.202.0>},
                        {id,router},
@@ -557,7 +557,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.204.0>},
                        {id,{emqttd_pubsub,1}},
@@ -571,7 +571,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.205.0>},
                        {id,{emqttd_pubsub,2}},
@@ -585,7 +585,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.206.0>},
                        {id,{emqttd_pubsub,3}},
@@ -599,7 +599,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.207.0>},
                        {id,{emqttd_pubsub,4}},
@@ -613,7 +613,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.208.0>},
                        {id,{emqttd_pubsub,5}},
@@ -627,7 +627,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.209.0>},
                        {id,{emqttd_pubsub,6}},
@@ -641,7 +641,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.210.0>},
                        {id,{emqttd_pubsub,7}},
@@ -655,7 +655,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pubsub_pool_sup}
              started: [{pid,<0.211.0>},
                        {id,{emqttd_pubsub,8}},
@@ -669,7 +669,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_pubsub_sup}
              started: [{pid,<0.203.0>},
                        {id,pubsub_pool},
@@ -684,7 +684,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.213.0>},
                        {id,{emqttd_server,1}},
@@ -698,7 +698,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.214.0>},
                        {id,{emqttd_server,2}},
@@ -712,7 +712,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.215.0>},
                        {id,{emqttd_server,3}},
@@ -726,7 +726,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.216.0>},
                        {id,{emqttd_server,4}},
@@ -740,7 +740,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.217.0>},
                        {id,{emqttd_server,5}},
@@ -754,7 +754,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.218.0>},
                        {id,{emqttd_server,6}},
@@ -768,7 +768,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.219.0>},
                        {id,{emqttd_server,7}},
@@ -782,7 +782,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,server_pool_sup}
              started: [{pid,<0.220.0>},
                        {id,{emqttd_server,8}},
@@ -796,7 +796,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_pubsub_sup}
              started: [{pid,<0.212.0>},
                        {id,server_pool},
@@ -811,7 +811,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.201.0>},
                        {id,emqttd_pubsub_sup},
@@ -820,7 +820,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.221.0>},
                        {id,emqttd_stats},
@@ -829,7 +829,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.222.0>},
                        {id,emqttd_metrics},
@@ -838,7 +838,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.223.0>},
                        {id,emqttd_retainer},
@@ -847,7 +847,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,pooler_pool_sup}
              started: [{pid,<0.225.0>},
                        {id,{emqttd_pooler,1}},
@@ -856,7 +856,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.224.0>},
                        {id,emqttd_pooler},
@@ -865,7 +865,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_trace_sup}
              started: [{pid,<0.227.0>},
                        {id,trace},
@@ -874,7 +874,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.226.0>},
                        {id,emqttd_trace_sup},
@@ -883,7 +883,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_cm_pool_sup}
              started: [{pid,<0.230.0>},
                        {id,{emqttd_cm,1}},
@@ -894,7 +894,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_cm_sup}
              started: [{pid,<0.229.0>},
                        {id,pool_sup},
@@ -907,7 +907,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.228.0>},
                        {id,emqttd_cm_sup},
@@ -916,7 +916,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sm_sup}
              started: [{pid,<0.232.0>},
                        {id,emqttd_sm_helper},
@@ -927,7 +927,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sm_pool_sup}
              started: [{pid,<0.234.0>},
                        {id,{emqttd_sm,1}},
@@ -936,7 +936,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sm_sup}
              started: [{pid,<0.233.0>},
                        {id,pool_sup},
@@ -947,7 +947,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.231.0>},
                        {id,emqttd_sm_sup},
@@ -956,7 +956,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.235.0>},
                        {id,emqttd_session_sup},
@@ -965,7 +965,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.236.0>},
                        {id,emqttd_broker},
@@ -974,7 +974,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.237.0>},
                        {id,emqttd_alarm},
@@ -983,7 +983,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.238.0>},
                        {id,emqttd_mod_sup},
@@ -992,7 +992,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.239.0>},
                        {id,emqttd_bridge_sup},
@@ -1001,7 +1001,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.240.0>},
                        {id,emqttd_access_control},
@@ -1010,7 +1010,7 @@
                        {shutdown,10000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sysmon_sup}
              started: [{pid,<0.243.0>},
                        {id,sysmon},
@@ -1025,7 +1025,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_sup}
              started: [{pid,<0.242.0>},
                        {id,emqttd_sysmon_sup},
@@ -1034,7 +1034,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,emqttd_dashboard_sup}
              started: [{pid,<0.269.0>},
                        {id,emqttd_dashboard_admin},
@@ -1043,7 +1043,7 @@
                        {shutdown,5000},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {<0.272.0>,esockd_listener_sup}
              started: [{pid,<0.273.0>},
                        {id,connection_sup},
@@ -1069,7 +1069,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {<0.272.0>,esockd_listener_sup}
              started: [{pid,<0.274.0>},
                        {id,acceptor_sup},
@@ -1082,7 +1082,7 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {<0.272.0>,esockd_listener_sup}
              started: [{pid,<0.275.0>},
                        {id,listener},
@@ -1105,7 +1105,7 @@
                        {shutdown,4294967295},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,esockd_sup}
              started: [{pid,<0.272.0>},
                        {id,{listener_sup,{http,18083}}},
@@ -1131,64 +1131,17 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: emqttd_dashboard
           started_at: 'emqttd@127.0.0.1'
 
-=CRASH REPORT==== 23-Jun-2016::10:54:27 ===
-  crasher:
-    initial call: application_master:init/4
-    pid: <0.281.0>
-    registered_name: []
-    exception exit: {bad_return,
-                     {{emqttd_auth_http_app,start,[normal,[]]},
-                      {'EXIT',
-                       {{badmatch,
-                         {error,
-                          {undef,
-                           [{emqttd_acl_http,init,
-                             [{undefined,
-                               {http_request,post,
-                                "http://huder.link/max/phpTraining/post_receive.php",
-                                [{access,"%A"},
-                                 {username,"%u"},
-                                 {password,"%P"},
-                                 {clientid,"%c"},
-                                 {ipaddr,"%a"},
-                                 {topic,"%t"},
-                                 {email,"%u"}]}}],
-                             []},
-                            {emqttd_access_control,'-handle_call/3-fun-1-',5,
-                             [{file,"src/emqttd_access_control.erl"},
-                              {line,147}]},
-                            {emqttd_access_control,handle_call,3,
-                             [{file,"src/emqttd_access_control.erl"},
-                              {line,146}]},
-                            {gen_server,try_handle_call,4,
-                             [{file,"gen_server.erl"},{line,629}]},
-                            {gen_server,handle_msg,5,
-                             [{file,"gen_server.erl"},{line,661}]},
-                            {proc_lib,init_p_do_apply,3,
-                             [{file,"proc_lib.erl"},{line,240}]}]}}},
-                        [{emqttd_auth_http_app,start,2,
-                          [{file,"src/emqttd_auth_http_app.erl"},{line,39}]},
-                         {application_master,start_it_old,4,
-                          [{file,"application_master.erl"},{line,273}]}]}}}}
-      in function  application_master:init/4 (application_master.erl, line 134)
-    ancestors: [<0.280.0>]
-    messages: [{'EXIT',<0.282.0>,normal}]
-    links: [<0.280.0>,<0.7.0>]
-    dictionary: []
-    trap_exit: true
-    status: running
-    heap_size: 987
-    stack_size: 27
-    reductions: 241
-  neighbours:
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+         application: emqttd_auth_http
+          started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.283.0>,esockd_listener_sup}
-             started: [{pid,<0.284.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.284.0>,esockd_listener_sup}
+             started: [{pid,<0.285.0>},
                        {id,connection_sup},
                        {mfargs,
                         {esockd_connection_sup,start_link,
@@ -1225,22 +1178,22 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.283.0>,esockd_listener_sup}
-             started: [{pid,<0.285.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.284.0>,esockd_listener_sup}
+             started: [{pid,<0.286.0>},
                        {id,acceptor_sup},
                        {mfargs,
                            {esockd_acceptor_sup,start_link,
-                               [<0.284.0>,#Fun<esockd_server.0.76791649>,
+                               [<0.285.0>,#Fun<esockd_server.0.76791649>,
                                 #Fun<esockd_listener_sup.1.16895020>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.283.0>,esockd_listener_sup}
-             started: [{pid,<0.286.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.284.0>,esockd_listener_sup}
+             started: [{pid,<0.287.0>},
                        {id,listener},
                        {mfargs,
                            {esockd_listener,start_link,
@@ -1255,15 +1208,15 @@
                                       {reuseaddr,true},
                                       {backlog,1024},
                                       {nodelay,true}]}],
-                                <0.285.0>,
+                                <0.286.0>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,4294967295},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,esockd_sup}
-             started: [{pid,<0.283.0>},
+             started: [{pid,<0.284.0>},
                        {id,{listener_sup,{mqtt,1883}}},
                        {mfargs,
                         {esockd_listener_sup,start_link,
@@ -1300,9 +1253,9 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.303.0>,esockd_listener_sup}
-             started: [{pid,<0.304.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.304.0>,esockd_listener_sup}
+             started: [{pid,<0.305.0>},
                        {id,connection_sup},
                        {mfargs,
                         {esockd_connection_sup,start_link,
@@ -1341,22 +1294,22 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.303.0>,esockd_listener_sup}
-             started: [{pid,<0.305.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.304.0>,esockd_listener_sup}
+             started: [{pid,<0.306.0>},
                        {id,acceptor_sup},
                        {mfargs,
                            {esockd_acceptor_sup,start_link,
-                               [<0.304.0>,#Fun<esockd_server.0.76791649>,
+                               [<0.305.0>,#Fun<esockd_server.0.76791649>,
                                 #Fun<esockd_listener_sup.1.16895020>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.303.0>,esockd_listener_sup}
-             started: [{pid,<0.306.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.304.0>,esockd_listener_sup}
+             started: [{pid,<0.307.0>},
                        {id,listener},
                        {mfargs,
                            {esockd_listener,start_link,
@@ -1373,15 +1326,15 @@
                                       {reuseaddr,true},
                                       {backlog,1024},
                                       {nodelay,true}]}],
-                                <0.305.0>,
+                                <0.306.0>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,4294967295},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,esockd_sup}
-             started: [{pid,<0.303.0>},
+             started: [{pid,<0.304.0>},
                        {id,{listener_sup,{mqtts,8883}}},
                        {mfargs,
                         {esockd_listener_sup,start_link,
@@ -1420,9 +1373,9 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.311.0>,esockd_listener_sup}
-             started: [{pid,<0.312.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.312.0>,esockd_listener_sup}
+             started: [{pid,<0.313.0>},
                        {id,connection_sup},
                        {mfargs,
                            {esockd_connection_sup,start_link,
@@ -1444,22 +1397,22 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.311.0>,esockd_listener_sup}
-             started: [{pid,<0.313.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.312.0>,esockd_listener_sup}
+             started: [{pid,<0.314.0>},
                        {id,acceptor_sup},
                        {mfargs,
                            {esockd_acceptor_sup,start_link,
-                               [<0.312.0>,#Fun<esockd_server.0.76791649>,
+                               [<0.313.0>,#Fun<esockd_server.0.76791649>,
                                 #Fun<esockd_listener_sup.1.16895020>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
-          supervisor: {<0.311.0>,esockd_listener_sup}
-             started: [{pid,<0.314.0>},
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
+          supervisor: {<0.312.0>,esockd_listener_sup}
+             started: [{pid,<0.315.0>},
                        {id,listener},
                        {mfargs,
                            {esockd_listener,start_link,
@@ -1475,15 +1428,15 @@
                                       {recbuf,8192},
                                       {exit_on_close,false},
                                       {nodelay,false}]}],
-                                <0.313.0>,
+                                <0.314.0>,
                                 {gen_logger,lager_logger,8}]}},
                        {restart_type,transient},
                        {shutdown,4294967295},
                        {child_type,worker}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
           supervisor: {local,esockd_sup}
-             started: [{pid,<0.311.0>},
+             started: [{pid,<0.312.0>},
                        {id,{listener_sup,{http,8083}}},
                        {mfargs,
                            {esockd_listener_sup,start_link,
@@ -1505,17 +1458,17 @@
                        {shutdown,infinity},
                        {child_type,supervisor}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:27 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:38 ===
          application: emqttd
           started_at: 'emqttd@127.0.0.1'
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:37 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:49 ===
           supervisor: {local,inet_gethost_native_sup}
-             started: [{pid,<0.328.0>},{mfa,{inet_gethost_native,init,[[]]}}]
+             started: [{pid,<0.329.0>},{mfa,{inet_gethost_native,init,[[]]}}]
 
-=PROGRESS REPORT==== 23-Jun-2016::10:54:37 ===
+=PROGRESS REPORT==== 25-Jun-2016::10:04:49 ===
           supervisor: {local,kernel_safe_sup}
-             started: [{pid,<0.327.0>},
+             started: [{pid,<0.328.0>},
                        {id,inet_gethost_native_sup},
                        {mfargs,{inet_gethost_native,start_link,[]}},
                        {restart_type,temporary},
