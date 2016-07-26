@@ -31,7 +31,7 @@
 
 - 每次編譯前，請先刪除舊有 `ebin/`
 - 編譯後，安全起見，進行 `./bin/emqttd reboot` & `./bin/emqttd start`
-- 其中 `emqttd_acl_http.erl` 若不想執行，請關掉設定於 `src/` 中的檔案關掉 compile 的設定
+- 其中 `emqttd_acl_http.erl` 若不想執行，請勿 compile or 關掉設定
 
 **Notice : 當每次變更 plugin 的任何設定，都要重新啟動 MQTT broker**
 
