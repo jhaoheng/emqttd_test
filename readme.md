@@ -63,10 +63,7 @@ http://localhost:18083
 - 安裝 mosquitto 
 	- mac : `brew install mosquitto`
 - `mosquitto_sub -h [host] -t [topic] -i [clientId] -u [user] -P [password]`
-	- mosquitto_sub -h dev-mqtt.orbwebsys.com -t /hello/# -i sub -u jhaoheng@gmail.com -P a3456
-	- mosquitto_sub -h dev-mqtt.orbwebsys.com -t /hello/# -i sub -u orbweb@orbweb.com -P orbweb@orbweb.com
 - `mosquitto_pub -h [host] -t [topic] -m "[message]" -u [user] -P [password] -i [clientId]`
-	- mosquitto_pub -h dev-mqtt.orbwebsys.com -t /hello/123 -m "world" -u orbweb@orbweb.com -P orbweb@orbweb.com -i pub
 
 # compile plugin
 ## 安裝 rebar
