@@ -129,7 +129,9 @@ ex:
 3. ca.xxx 自己的證書
 4. xxxx.crt, xxxx.csr, xxxx.key 透過 ca 證書簽發出的憑證，xxxx 為產生憑證的電腦名稱
 5. 透過 xxxx.csr / xxxx.key 改為 ssl.csr / ssl.key 放在 emqttd/etc/ssl 中
-6. `mosquitto_sub -h [此電腦的ip] -p 8883 -t /orbweb/ipcam/motiondetector/JPQQBX8Q9KO356CNQWMU -i cli_sub_max2 -u max.hu@orbweb.com -P a12345 --cafile ca.crt`
+6. `mosquitto_sub -h [server_ip] -p 8883 -t [topic] -i [clientId] -u [username] -P [password] --cafile ca.crt`
+	- 如果是 mac osx `brew install mosquitto`
+	- 其他可去 mosquitto 安裝指令
 7. 進入 emqttd:18083 查看是否登入成功
 
 # emqttd 使用心得
