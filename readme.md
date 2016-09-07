@@ -129,19 +129,23 @@ ex:
 3. ca.xxx 自己的證書
 4. xxxx.crt, xxxx.csr, xxxx.key 透過 ca 證書簽發出的憑證，xxxx 為產生憑證的電腦名稱
 5. 透過 xxxx.csr / xxxx.key 改為 ssl.csr / ssl.key 放在 emqttd/etc/ssl 中
-6. `mosquitto_sub -h [server_ip] -p 8883 -t [topic] -i [clientId] -u [username] -P [password] --cafile ca.crt`
-	- 如果是 mac osx `brew install mosquitto`
-	- 其他可去 mosquitto 安裝指令
-7. 進入 emqttd:18083 查看是否登入成功
 
 ## 使用 cmd
+
 1. `openssl req -newkey rsa:2048 -x509 -nodes -sha512 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt`
 	- check : `openssl x509 -in ca.crt -nameopt multiline -subject -noout`
 2. `openssl genrsa -out server.key 2048`
 3. `openssl req -new -sha512 -out server.csr -key server.key`
 4. `openssl x509 -req -sha512 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -CAserial ca.srl -out server.crt -days 365 -extensions JPMextensions`
 	- check : `openssl x509 -in server.crt -nameopt multiline -subject -noout`
-5. Test : `mosquitto_sub -h [mqtt_ip or hostname] -p 8883 -t [topic] -i [clientId] -u [username] -P [password] --cafile ca.crt`
+
+## 測試
+
+1. 將 server.crt -> ssl.crt 與 server.key -> ssl.key，放到 emqttd/etc/ssl
+2. `mosquitto_sub -h [server_ip] -p 8883 -t [topic] -i [clientId] -u [username] -P [password] --cafile ca.crt`
+	- 如果是 mac osx `brew install mosquitto`
+	- 其他可去 mosquitto 安裝指令
+3. 進入 emqttd:18083 查看是否登入成功
 
 # emqttd 使用心得
 ## EMQTTD (MQTT broker) Feature
