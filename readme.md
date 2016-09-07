@@ -122,7 +122,7 @@ ex:
 
 # 使用 mqtts:8883 來登入 emqttd
 
-使用 repo 中的 generate-CA.sh 產生憑證
+## 使用 repo 中的 generate-CA.sh 產生憑證
 
 1. 使用 generate-CA.sh
 2. sh generate-CA.sh
@@ -133,6 +133,15 @@ ex:
 	- 如果是 mac osx `brew install mosquitto`
 	- 其他可去 mosquitto 安裝指令
 7. 進入 emqttd:18083 查看是否登入成功
+
+## 使用 cmd
+1. `openssl req -newkey rsa:2048 -x509 -nodes -sha512 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt`
+	- check : `openssl x509 -in ca.crt -nameopt multiline -subject -noout`
+2. `openssl genrsa -out server.key 2048`
+3. `openssl req -new -sha512 -out server.csr -key server.key`
+4. `openssl x509 -req -sha512 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -CAserial ca.srl -out server.crt -days 365 -extensions JPMextensions`
+	- check : `openssl x509 -in server.crt -nameopt multiline -subject -noout`
+5. Test : `mosquitto_sub -h [mqtt_ip or hostname] -p 8883 -t [topic] -i [clientId] -u [username] -P [password] --cafile ca.crt`
 
 # emqttd 使用心得
 ## EMQTTD (MQTT broker) Feature
