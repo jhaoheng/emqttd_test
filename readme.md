@@ -168,6 +168,14 @@ subject=
 	- 其他可去 mosquitto 安裝指令
 3. 進入 emqttd:18083 查看是否登入成功
 
+## ios framewrok
+
+- [ckrey MQTT-Client-Framework](https://github.com/ckrey/MQTT-Client-Framework)
+- `openssl x509 -in server.crt -out server.pem -outform PEM`
+- `openssl x509 -outform der -in server.pem -out server.der`
+- check : mosquitto_sub -h 127.0.0.1 -p 8883 -t {topic} -i {client} -u {user} -P {pw} --cert server.crt --key server.key
+- set server.der to `MQTTSSLSecurityPolicy`
+
 # emqttd 使用心得
 ## EMQTTD (MQTT broker) Feature
 
