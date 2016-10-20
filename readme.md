@@ -1,10 +1,9 @@
 # install
 - [github](https://github.com/emqtt/emqttd)
-	- 此為源碼，必須經過 compile，會在 rel 中產生 emqttd 的檔案
-	- emqttd(1.1.2)
-- 文件 : http://docs.emqtt.com/en/latest/getstarted.html
+- install : <http://emqtt.io/docs/v2/install.html>
 
-## ubuntu
+## erlang
+### ubuntu
 
 - aws ubuntu
 - must
@@ -13,20 +12,11 @@
 	- `sudo apt-get install erlang`
 	- erlang 17+
 		- 檢查版本指令 `$erl`
-- make error : `ERROR: OTP release R17 or later is required, you have: R16B03`
-	- https://gist.github.com/bryanhunter/10380945
-		- `http://erlang.org/download/` 可去此地方下載最新版本
-	- 若為 mac，則直接 `brew install --devel erlang` 安裝最新版本的 erlang 即可
-	- 安裝後，須將預設的 `/usr/bin/erl` 變更連結位置
 
-## centOs
+### centOs
 - env 
 	- CentOS Linux release 7.2.1511 (Core) 
 - [install erlang]
-	- 套件安裝
-		1. `wget https://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm`
-		2. `rpm -Uvh erlang-solutions-1.0-1.noarch.rpm`
-		3. `sudo yum install esl-erlang`
 	- 使用 `sudo yum install esl-erlang` : 可拿到 R19 版本
 	- 其他參考 : 
 		- 下載開發版本 : [erlang.org](http://www.erlang.org/downloads)
@@ -34,7 +24,7 @@
 		- 若用 `sudo yum install erlang` : 版本為 R16B-03.16.el7  
 		- 若要移除錯誤版本 `sudo yum remove erlang*`
 
-## mac osx 
+### mac osx 
 
 - env : 
 	- mac osx 10.11.5
@@ -43,9 +33,6 @@
 
 	```
 	brew install erlang-r19 
-	git clone https://github.com/emqtt/emqttd.git
-	cd emqttd && make && make dist
-	cd rel/emqttd && ./bin/emqttd start
 	```
 
 # 查看版本 & Troubleshoot
