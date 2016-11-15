@@ -128,6 +128,7 @@ ex:
 	- check : `openssl x509 -in server.crt -nameopt multiline -subject -noout`
 
 注意: 產生 server.crt 時，若為主機端（非 localhost 測試），則必須填妥該主機的 host name, ex : 
+- commonName 在 localhost 時請填寫 localhost
 
 ```
 subject= 
