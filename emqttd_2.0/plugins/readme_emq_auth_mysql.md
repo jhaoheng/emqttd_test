@@ -46,3 +46,16 @@ cd _rel/emqttd && ./bin/emqttd console
 		7. 測試指令 : 
 			- user : `mosquitto_sub -h localhost -t /orbweb/# -i client_id_2 -u max.hu@orbweb.com -P a12345`
 			- device : `mosquitto_sub -h localhost -t /orbweb/# -i ccfc821be2c7b2a39133f7f7cbfa8106fcd42def48faf1e3c7 -u 00:1B:FE:0D:44:21 -P hcpwdtst`
+
+			
+## ACL 
+
+- 結構順序
+	- 所有的進程順序 `deps/emqttd/src/emqttd_acl_mod.erl`
+		- 指令(mosquitto)參數取得的方式，透過此地方配置
+	- {plugin}/etc/emq_auth_mysql_cli : 處理 sql，並將 變數 與 query 結合的地方，手動設置 %u....
+	- {plugin}/etc/emq_auth_mysql.conf : 設定 acl_query 與 acl_nomatch
+	- {plugin}/etc/emq_auth_mysql_app.erl : 負責取得從 conf 的 query 參數，將之放入 mod 中，進行管控
+		- 裡面有 AclEnv : 可將任意參數放置其中
+	- {plugin}/etc/emq_acl_mysql.erl : 
+

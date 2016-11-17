@@ -45,6 +45,7 @@ register_auth_mod(SuperQuery) ->
 register_acl_mod(SuperQuery) ->
     with_acl_enabled(fun(AclQuery) ->
         {ok, AclNomatch} = application:get_env(?APP, acl_nomatch),
+        % AclEnv = {SuperQuery, parse_query(AclQuery), AclNomatch},
         AclEnv = {SuperQuery, parse_query(AclQuery), AclNomatch},
         emqttd_access_control:register_mod(acl, emqttd_acl_mysql, AclEnv)
     end).

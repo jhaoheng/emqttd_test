@@ -55,7 +55,7 @@ check(Client = #mqtt_client{username = Username}, Password, #state{super_query =
                                                                    device_auth_query  = {DeviceAuthQuery, DeviceAuthParams},
                                                                    hash_type   = HashType}) ->
     Role = checkPattern([Username]),
-    io:format("~p~n", [Role]),
+    io:format("~n~p~n", [Role]),
     io:format("~p~n", [DeviceAuthQuery]),
     Test = application:get_env(?APP, deviceauthquery),
     io:format("~p~n", [Test]),
@@ -64,6 +64,7 @@ check(Client = #mqtt_client{username = Username}, Password, #state{super_query =
         "device" ->  {ok, AuthSql=DeviceAuthQuery, AuthParams=DeviceAuthParams};
         false -> {ok, AuthSql=UserAuthQuery, AuthParams=UserAuthParams}
     end,
+    io:format("AuthSql = ~p ; AuthParams = ~p ;~n",[AuthSql, AuthParams]),
     case emqttd_plugin_mysql:query(AuthSql, AuthParams, Client) of
         {ok, [<<"password">>], [[PassHash]]} ->
             check_pass(PassHash, Password, HashType);

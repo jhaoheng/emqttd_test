@@ -29,77 +29,61 @@
 init({SuperQuery, AclQuery, AclNomatch}) ->
     {ok, #state{super_query = SuperQuery, acl_query = AclQuery, acl_nomatch = AclNomatch}}.
 
+% check_acl({Client = #mqtt_client{client_id = ClientId, username = Username}, PubSub, Topic}, _State) ->
+%         io:format("=====ACL CHECK=====~n"),
+%         io:format("Acl Info: clientId=~p, username=~p, PubSub=~p~n, Topic=~p~n", [ClientId, Username, PubSub, Topic]),
+%         splitTopic(Topic),
+%         allow.
+
 check_acl({#mqtt_client{username = <<$$, _/binary>>}, _PubSub, _Topic}, _State) ->
     {error, bad_username};
 
 check_acl({Client, PubSub, Topic}, #state{super_query = SuperQuery,
-                                          acl_query   = {AclSql, AclParams},
+                                          acl_query   = {AclSqlBeta, AclParams},
                                           acl_nomatch = Default}) ->
-
-    case emqttd_plugin_mysql:is_superuser(SuperQuery, Client) of
-        false -> case emqttd_plugin_mysql:query(AclSql, AclParams, Client) of
-                    {ok, _Columns, []} ->
-                        Default;
-                    {ok, _Columns, Rows} ->
-                        Rules = filter(PubSub, compile(Rows)),
-                        case match(Client, Topic, Rules) of
-                            {matched, allow} -> allow;
-                            {matched, deny}  -> deny;
-                            nomatch          -> Default
-                        end
-                end;
-        true  ->
-            allow
+    io:format("~n~n=====ACL CHECK=====~n"),
+    io:format("ACL SQL = ~p ; ACL Params = ~p ;~n?_PubSub = ~p ; _Topic = ~p ; ~n",[AclSqlBeta, AclParams, PubSub, Topic]),
+    Company = splitTopic(Topic),
+    AclSql = sqlCombineWithCompany(AclSqlBeta,Company),
+    ReceiveData = [1,topicToInt(atom_to_list(PubSub)),Topic],
+    io:format("ReceiveData : ~p~n",[ReceiveData]),
+    % allow.
+    case emqttd_plugin_mysql:query(AclSql, AclParams, Client) of
+        {ok, _Columns, []} ->
+            io:format("***No Find Any Topic in this company Name.***~n~n"),
+            Default;
+        {ok, _Columns, Rows} ->
+            io:format("Topic Rows = ~p~n~n",[Rows]),
+            % allow
+            case lists:member(ReceiveData,Rows) of
+                true  -> allow;
+                false -> {error, bad_username}, deny
+            end
     end.
 
-match(_Client, _Topic, []) ->
-    nomatch;
+    % case emqttd_plugin_mysql:is_superuser(SuperQuery, Client) of
+    %     false -> case emqttd_plugin_mysql:query(AclSql, AclParams, Client) of
+    %                 {ok, _Columns, []} ->
+    %                     Default;
+    %                 {ok, _Columns, Rows} ->
+    %                     Rules = filter(PubSub, compile(Rows)),
+    %                     case match(Client, Topic, Rules) of
+    %                         {matched, allow} -> allow;
+    %                         {matched, deny}  -> deny;
+    %                         nomatch          -> Default
+    %                     end
+    %             end;
+    %     true  ->
+    %         allow
+    % end.
 
-match(Client, Topic, [Rule|Rules]) ->
-    case emqttd_access_rule:match(Client, Topic, Rule) of
-        nomatch -> match(Client, Topic, Rules);
-        {matched, AllowDeny} -> {matched, AllowDeny}
+topicToInt(N) ->
+    case N of
+        "subscribe" -> 1;
+        "publish" -> 2;
+        "pubsub" -> 3
     end.
 
-filter(PubSub, Rules) ->
-    [Term || Term = {_, _, Access, _} <- Rules, Access =:= PubSub orelse Access =:= pubsub].
-
-compile(Rows) ->
-    compile(Rows, []).
-compile([], Acc) ->
-    Acc;
-compile([[Allow, IpAddr, Username, ClientId, Access, Topic]|T], Acc) ->
-    Who  = who(IpAddr, Username, ClientId),
-    Term = {allow(Allow), Who, access(Access), [topic(Topic)]},
-    compile(T, [emqttd_access_rule:compile(Term) | Acc]).
-
-who(_, <<"$all">>, _) ->
-    all;
-who(null, null, null) ->
-    throw(undefined_who);
-who(CIDR, Username, ClientId) ->
-    Cols = [{ipaddr, b2l(CIDR)}, {user, Username}, {client, ClientId}],
-    case [{C, V} || {C, V} <- Cols, V =/= null] of
-        [Who] -> Who;
-        Conds -> {'and', Conds}
-    end.
-
-allow(1)  -> allow;
-allow(0)  -> deny;
-allow(<<"1">>)  -> allow;
-allow(<<"0">>)  -> deny.
-
-access(1) -> subscribe;
-access(2) -> publish;
-access(3) -> pubsub;
-access(<<"1">>) -> subscribe;
-access(<<"2">>) -> publish;
-access(<<"3">>) -> pubsub.
-
-topic(<<"eq ", Topic/binary>>) ->
-    {eq, Topic};
-topic(Topic) ->
-    Topic.
 
 reload_acl(_State) ->
     ok.
@@ -107,6 +91,42 @@ reload_acl(_State) ->
 description() ->
     "ACL with Mysql".
 
-b2l(null) -> null;
-b2l(B)    -> binary_to_list(B).
+
+%%--------------------------------------------------------------------
+%% 切割 Topic
+%%--------------------------------------------------------------------
+
+splitTopic(Topic) -> 
+    % Topic = "/zavio/ipcam/alert/sic001/",
+    FilterTopic = re:replace(Topic, "[^A-Za-z0-9/_#+]", "", [global, {return, list}]), % 過濾掉 <<>> 符號 保留特殊字元
+    Keys = string:tokens(FilterTopic, "/"),
+    [Company | Others] = Keys,
+    io:format("~n===Split Topic===~n"),
+    io:format("- Company = ~p~n- Others = ~p~n~n", [Company, Others]),
+    rsplit(Company).
+
+rsplit(Company) -> 
+    Company.
+
+%%--------------------------------------------------------------------
+%% 結合 str
+%%--------------------------------------------------------------------
+-spec concat(String1, String2) -> String3 when
+      String1 :: string(),
+      String2 :: string(),
+      String3 :: string().
+
+concat(S1, S2) -> S1 ++ S2.
+
+%%--------------------------------------------------------------------
+%% 結合 full-sql = acl_sql + company
+%%--------------------------------------------------------------------
+sqlCombineWithCompany(AclSql , Company) -> 
+    % AclSql = "select allow, access, topic from mqtt_acl where company = '<topic_company>'",
+    % Company = "orbweb",
+    AclSql2 = re:replace(AclSql, "<topic_company>", Company, [global, {return, list}]),
+    io:format("full sql = ~p~n",[AclSql2]),
+    rCombine(AclSql2).
+rCombine(AclSql2) -> 
+    AclSql2.
 
