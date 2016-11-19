@@ -175,42 +175,7 @@ ex:
 	- `openssl x509 -outform der -in server.pem -out server.der` : 從 pem 轉 der
 - set server.der to `MQTTSSLSecurityPolicy` : 參考 ios app
 
-# emqttd 使用心得
-## EMQTTD (MQTT broker) Feature
+# http api
 
-- 完整的MQTT V3.1/V3.1.1協議規範支持
-- QoS0, QoS1, QoS2消息支持
-- 持久會話與離線消息支持
-- Retained消息支持
-- Last Will消息支持
-- TCP/SSL連接支持
-- MQTT/WebSocket(SSL)支持
-- HTTP消息發布接口支持
-- $SYS/#系統主題支持
-- 客戶端在線狀態查詢與訂閱支持
-- 客戶端ID或IP地址認證支持
-- 用戶名密碼認證支持
-- LDAP認證
-- Redis、MySQL、PostgreSQL認證集成
-- 瀏覽器Cookie認證
-- 基於客戶端ID、IP地址、用戶名的訪問控制(ACL)
-- 多服務器節點集群(Cluster)
-- 多服務器節點橋接(Bridge)
-- mosquitto橋接支持
-- Stomp協議支持
-- Stomp/SockJS支持
-- 通過Paho兼容性測試
-
-- 說明 : http://emqttd-docs.readthedocs.io/en/latest/getstarted.html
-
-## 其他尚未整理
-
-### hook
-http://emqtt.com/docs/design.html#hook
-
-```
-1. 必須先讀取 module(emqttd_plugin_template)
-2. export 為輸出的順序列
-3. 使用 hook 前，需要先設定啟動 plugin
-```
-- 若要檢查 hook 的話，試試 https://github.com/emqtt/emqttd/blob/master/src/emqttd_hook.erl#L83
+1. 開啟 dashboard 後，可看到 http api
+2. `curl -v --basic -u root:passwd -d "qos=1&retain=0&topic=tokudu&message=hello EMQTTD" -k http://localhost:18083/mqtt/publish`
