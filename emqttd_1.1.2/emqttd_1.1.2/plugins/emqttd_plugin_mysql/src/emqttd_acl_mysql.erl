@@ -57,7 +57,7 @@ check_acl({Client, PubSub, Topic}, #state{super_query = SuperQuery,
             % allow
             case lists:member(ReceiveData,Rows) of
                 true  -> allow;
-                false -> {error, bad_username}, deny
+                false -> {error, bad_username}, Default
             end
     end.
 

@@ -44,7 +44,6 @@ init({SuperQuery, UserAuthQuery, DeviceAuthQuery, HashType}) ->
 %                   [ClientId, Username, Password]),
 %         Role = checkPattern([Username]),
 %         io:format("~p~n", [Role]),
-%         Client = #mqtt_client{},
 %         ok.
 
 check(#mqtt_client{username = Username}, _Password, _State) when ?EMPTY(Username) ->
