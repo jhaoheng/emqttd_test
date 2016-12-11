@@ -32,6 +32,7 @@
 -define(EMPTY(Username), (Username =:= undefined orelse Username =:= <<>>)).
 
 init({SuperQuery, UserAuthQuery, DeviceAuthQuery, HashType}) ->
+    % if(UserSql) get Company and recombine UserSql 
     {ok, #state{
         user_auth_query = UserAuthQuery, 
         device_auth_query = DeviceAuthQuery,
@@ -39,41 +40,76 @@ init({SuperQuery, UserAuthQuery, DeviceAuthQuery, HashType}) ->
         hash_type = HashType}
     }.
 % debug 用
-% check(#mqtt_client{client_id = ClientId, username = Username}, Password, _Opts) ->
+% check(#mqtt_client{client_id = ClientId, username = Username}, Password, #state{super_query = SuperQuery,
+%                                                                            user_auth_query  = {UserAuthQuery, UserAuthParams},
+%                                                                          device_auth_query  = {DeviceAuthQuery, DeviceAuthParams},
+%                                                                                 hash_type   = HashType}) ->
 %         io:format("Auth Demo: clientId=~p, username=~p, password=~p~n",
 %                   [ClientId, Username, Password]),
 %         Role = checkPattern([Username]),
 %         io:format("~p~n", [Role]),
-%         ok.
+%         case Role of
+%             "email" ->  
+%                 [Status, Res] = checkUsersClientRegex(ClientId, UserAuthQuery),
+%                 if
+%                     Status==true ->
+%                         % {ok, AuthSql=Res, AuthParams=UserAuthParams};
+%                         ok;
+%                     true -> 
+%                         {error, Res}
+%                 end;
+%             "device" ->  
+%                 {ok, AuthSql=DeviceAuthQuery, AuthParams=DeviceAuthParams};
+%             false ->
+%                 {error, role_error}
+%         end.
 
 check(#mqtt_client{username = Username}, _Password, _State) when ?EMPTY(Username) ->
     {error, username_undefined};
 
-check(Client = #mqtt_client{username = Username}, Password, #state{super_query = SuperQuery,
+check(Client = #mqtt_client{username = Username, client_id = ClientId}, Password, #state{super_query = SuperQuery,
                                                                    user_auth_query  = {UserAuthQuery, UserAuthParams},
                                                                    device_auth_query  = {DeviceAuthQuery, DeviceAuthParams},
                                                                    hash_type   = HashType}) ->
     Role = checkPattern([Username]),
     io:format("~n~p~n", [Role]),
-    io:format("~p~n", [DeviceAuthQuery]),
-    Test = application:get_env(?APP, deviceauthquery),
-    io:format("~p~n", [Test]),
     case Role of
-        "email" ->  {ok, AuthSql=UserAuthQuery, AuthParams=UserAuthParams};
-        "device" ->  {ok, AuthSql=DeviceAuthQuery, AuthParams=DeviceAuthParams};
-        false -> {ok, AuthSql=UserAuthQuery, AuthParams=UserAuthParams}
+        "email" ->  
+            [Status, Res] = checkUsersClientRegex(ClientId, UserAuthQuery),
+            case Status of
+                true -> 
+                    {Is_successVerify = true, Reason=""},
+                    {AuthSql=Res, AuthParams=UserAuthParams};
+                false -> 
+                    {Is_successVerify = false, Reason = client_id_error},
+                    {AuthSql=Res, AuthParams=UserAuthParams}
+            end;
+        "device" ->  
+            {Is_successVerify = true, Reason=""},
+            {AuthSql=DeviceAuthQuery, AuthParams=DeviceAuthParams};
+        false -> 
+            {Is_successVerify = false, Reason = role_error},
+            {AuthSql="", AuthParams=""}
     end,
-    io:format("AuthSql = ~p ; AuthParams = ~p ;~n",[AuthSql, AuthParams]),
-    case emqttd_plugin_mysql:query(AuthSql, AuthParams, Client) of
-        {ok, [<<"password">>], [[PassHash]]} ->
-            check_pass(PassHash, Password, HashType);
-        {ok, [<<"password">>, <<"salt">>], [[PassHash, Salt]]} ->
-            check_pass(PassHash, Salt, Password, HashType);
-        {ok, _Columns, []} ->
-            {error, notfound};
-        {error, Error} ->
-            {error, Error}
+
+    if
+        Is_successVerify==true ->
+            io:format("AuthSql = ~p ; AuthParams = ~p ;~n",[AuthSql, AuthParams]),
+            case emqttd_plugin_mysql:query(AuthSql, AuthParams, Client) of
+                {ok, [<<"password">>], [[PassHash]]} ->
+                    check_pass(PassHash, Password, HashType);
+                {ok, [<<"password">>, <<"salt">>], [[PassHash, Salt]]} ->
+                    check_pass(PassHash, Salt, Password, HashType);
+                {ok, _Columns, []} ->
+                    {error, notfound};
+                {error, Error} ->
+                    {error, Error}
+            end;
+
+        Is_successVerify==false ->
+            {error, Reason}
     end.
+
 
 check_pass(PassHash, Password, HashType) ->
     check_pass(PassHash, hash(HashType, Password)).
@@ -120,3 +156,45 @@ getRole([?Mac_address_pattern]) ->
     % {ok, #state{auth_query = DeviceAuthQuery, super_query = SuperQuery, hash_type = HashType}};
 getRole(nomatch) ->
     false.
+
+
+%%--------------------------------------------------------------------
+%% User sql 判斷 client id 是否符合規則
+%%--------------------------------------------------------------------
+checkUsersClientRegex(ClientId, UserAuthQuery) ->
+    Filter = re:replace(ClientId, "[^A-Za-z0-9/_#+]", "", [global, {return, list}]), % 過濾掉 <<>> 符號 保留特殊字元
+    LowerId = string:to_lower(Filter),
+    RegExp = "^[a-z0-9]+_[a-z0-9]+_[a-z0-9]+$",
+    case re:run(LowerId, RegExp) of
+        {match, Captured} -> 
+            Company = splitTopic(LowerId),
+            AuthSql = sqlCombineWithCompany(UserAuthQuery , Company),
+            [Status = true, AuthSql];
+        nomatch -> 
+            % io:format("=====error====="),
+            % error
+            [Status = false, ""]
+    end.
+
+%%--------------------------------------------------------------------
+%% 切割 Client id
+%%--------------------------------------------------------------------
+splitTopic(ClientId) -> 
+    Keys = string:tokens(ClientId, "_"),
+    [Type, Company | Others] = Keys,
+    % io:format("~n===Split ClientId===~n"),
+    % io:format("- Company = ~p~n- Others = ~p~n~n", [Company, Others]),
+    rsplit(Company).
+
+rsplit(Company) -> 
+    Company.
+
+%%--------------------------------------------------------------------
+%% 結合 full-user-sql = user_sql + company
+%%--------------------------------------------------------------------
+sqlCombineWithCompany(UserSql , Company) -> 
+    UserSqlWithCompany = re:replace(UserSql, "<company>", Company, [global, {return, list}]),
+    % io:format("full sql = ~p~n",[UserSqlWithCompany]),
+    rCombine(UserSqlWithCompany).
+rCombine(UserSqlWithCompany) -> 
+    UserSqlWithCompany.
