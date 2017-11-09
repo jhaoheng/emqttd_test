@@ -1,0 +1,49 @@
+version: "3.2"
+services:
+  mysql:
+    image: mysql:5.6
+    container_name: mysql
+    ports:
+      - 6612:3306/tcp
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/base_schema.sql
+      
+  mqtt_broker:
+    image: emqttd:2.3-rc.2
+    ports:
+      - 18083:18083/tcp # dashboard
+      - 1883:1883/tcp   # MQTT TCP port
+      - 8883:8883/tcp   # MQTT TCP TLS/SSL port
+      - 8083:8083/tcp   # HTTP and WebSocket port
+      - 8084:8084/tcp   # HTTPS and WSS port
+      - 8080:8080/tcp   # mgmt API port
+    container_name: mqtt_broker
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    # domainname: 
+    # hostname: 
+    user: root
+    environment:
+      # configure : https://github.com/emqtt/emqttd/blob/master/etc/emq.conf
+      # - EMQ_HOST=
+      - EMQ_WAIT_TIME=5
+      - EMQ_ADMIN_PASSWORD=admin
+      # - EMQ_LOG__CONSOLE=console
+      - EMQ_MQTT__MAX_PACKET_SIZE=64KB
+      - EMQ_LOADED_PLUGINS="emq_auth_mysql, emq_recon, emq_modules, emq_retainer, emq_dashboard"
+      - EMQ_MQTT__ALLOW_ANONYMOUS=false
+      # #mysql parameters
+      - EMQ_AUTH__MYSQL__SERVER=mysql:3306
+      - EMQ_AUTH__MYSQL__POOL=8
+      - EMQ_AUTH__MYSQL__USERNAME=root
+      - EMQ_AUTH__MYSQL__PASSWORD=root
+      - EMQ_AUTH__MYSQL__DATABASE=mqtt_demo
+      - EMQ_AUTH__MYSQL__AUTH_QUERY=SELECT password FROM mqtt_user WHERE username = '%u' LIMIT 1
+      - EMQ_AUTH__MYSQL__PASSWORD_HASH=plain #plain, md5, sha, sha256, bcrypt
+      - EMQ_AUTH__MYSQL__SUPER_QUERY=select is_superuser from mqtt_user where username = '%u' limit 1
+      - EMQ_AUTH__MYSQL__ACL_QUERY=select allow, ipaddr, username, clientid, access, topic from mqtt_acl where ipaddr = '%a' or username = '%u' or username = '$all' or clientid = '%c'
+      - EMQ_AUTH__MYSQL__ACL_NOMATCH=deny
