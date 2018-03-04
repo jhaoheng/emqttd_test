@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  emq:
+    image: emq_ubuntu:v2.3.5
+    container_name: emq
+    ports:
+      - 1883:1883/tcp
+    command : /opt/emqttd/start.sh
